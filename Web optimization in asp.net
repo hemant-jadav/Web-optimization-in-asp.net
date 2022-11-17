@@ -1,0 +1,16 @@
+    -Minify css and java scripts files (you can use https://csscompressor.com/ and https://jscompress.com/)
+    -Turn on HTTP compression on the server (IIS).
+    	  ~This reduces the size of the page sent to the client, including the ViewState
+
+    -Caching is key to performance, consider your caching strategy very carefully.
+    -Disable viewstate if possible.
+	      ~View state is a kind of hash map (or at least you can think of it that way) that ASP.NET uses to store all the temporary information about a page - like what options are currently chosen in each select box, what values are there in each text box, which panel are open, etc. You can also use it to store any arbitrary information. 	
+
+    -Set <compilation debug=”false"> in web.config when deploying the app.
+	      ~ By befault compilation debug is true that is used to check c# coding error when you debug code in VS
+
+    -Consider CDN's or subdomains for graphics and other static content.
+    -Place javascript at the bottom of the page, CSS at the top.
+
+    -Consider CSS sprites for icons and other "small" graphics.
+      	~CSS sprites are a way to reduce the number of HTTP requests made for image resources referenced by your site. Images are combined into one larger image at defined X and Y coorindates. Having assigned this generated image to relevant page elements the background-position CSS property can then be used to shift the visible area to the required component image.
